@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="contenedor mt-5">
+      <main className="contenedor my-5">
         {jobs ? jobs.map(job => (
           <JobsCard key={job.id} job={job} />
         )) : (

@@ -20,3 +20,25 @@
     margin: 10px 0;
     color: var(--VeryDarkGrayishCyan);
 }
+.jobsCard__list{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    color: var(--DarkGrayishCyan);
+    font-weight: 500;
+}
+.jobsCard__list li:first-child {
+    list-style: none;
+}
+.jobsCard__skills{
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 1rem;
+}
+.skill{
+    background-color: var(--LightGrayishCyan2);
+    padding: 10px;
+    color: var(--DesaturatedDarkCyan);
+    font-weight: 700;
+}

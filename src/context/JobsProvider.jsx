@@ -12,7 +12,7 @@ const JobsProvider = ({children}) => {
         const url = 'http://localhost:5173/data.json';
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
-        setJobs(resultado)
+        setJobs(resultado);
     }
 
     const [jobs, setJobs] = useState([]);
@@ -20,7 +20,7 @@ const JobsProvider = ({children}) => {
     return (
         <JobsContext.Provider
                 value={{
-                    jobs
+                    jobs,
                 }}
         >{children}
         </JobsContext.Provider>
