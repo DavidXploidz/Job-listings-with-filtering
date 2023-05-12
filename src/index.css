@@ -1,0 +1,49 @@
+:root{
+  /* ## Colors */
+  /* ### Primary */
+  --DesaturatedDarkCyan: hsl(180, 29%, 50%);
+
+  /* ### Neutral */
+  --White: hsl(0, 0%, 98%);
+  --LightGrayishCyan : hsl(180, 52%, 96%); /*(Background)*/
+  --LightGrayishCyan2 : hsl(180, 31%, 95%); /*(Filter Tablets)*/
+  --DarkGrayishCyan: hsl(180, 8%, 52%);
+  --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+
+  --fuentePrincipal: 'League Spartan', sans-serif;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body{
+  font-size: 15px;
+  font-family: var(--fuentePrincipal);
+  min-height: 100vh;
+  background-color: var(--LightGrayishCyan);
+}
+img, picture, svg, video{
+  display: block;
+  max-width: 100%;
+}
+input, textarea, button, select{
+  font: inherit;
+}
+/* Utilidades */
+.contenedor{
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 90%;
+}
+.mt-5{
+  margin-top: 5rem;
+}

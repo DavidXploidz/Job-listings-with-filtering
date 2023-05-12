@@ -1,0 +1,22 @@
+.jobsCard{
+    padding: 2rem;
+    background-color: var(--White);
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(91,164,164,0.5);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(91,164,164,0.5);
+    box-shadow: 0px 5px 10px 0px rgba(91,164,164,0.5);
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 1rem;
+}
+.jobsCard__company{
+    color: var(--DesaturatedDarkCyan);
+    font-weight: 700;
+}
+.jobsCard__position{
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 10px 0;
+    color: var(--VeryDarkGrayishCyan);
+}
