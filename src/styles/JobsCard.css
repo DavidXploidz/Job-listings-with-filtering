@@ -9,15 +9,38 @@
     display: grid;
     grid-template-columns: 100px 1fr 1fr;
     gap: 1rem;
+    border-left: 5px solid transparent;
+}
+.jobsCard--featured{
+    border-left: 5px solid var(--DesaturatedDarkCyan);
+}
+.jobsCard__status{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+.jobsCard__pill{
+    padding: 3px 10px;
+    background-color: var(--DesaturatedDarkCyan);
+    display: inline-block;
+    border-radius: 30px;
+    color: var(--White);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.jobsCard__pill--dark{
+    background-color: var(--VeryDarkGrayishCyan);
 }
 .jobsCard__company{
     color: var(--DesaturatedDarkCyan);
     font-weight: 700;
+    font-size: 20px;
 }
 .jobsCard__position{
     font-weight: 700;
     font-size: 1.6rem;
-    margin: 10px 0;
+    margin: 5px 0;
     color: var(--VeryDarkGrayishCyan);
 }
 .jobsCard__list{

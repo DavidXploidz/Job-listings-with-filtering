@@ -13,20 +13,32 @@ export default function JobsCard({job}) {
         languages,
         tools,
         level,
-        role
+        role,
+        featured,
+        newJob
     } = job;
 
     let skills = languages.concat(tools);
     skills.unshift(level);
     skills.unshift(role);
 
+    const active = featured ? 'jobsCard--featured' : '';
+
   return (
-    <div className='jobsCard'>
+    <div className={`jobsCard ${active}`}>
         <picture>
             <img src={`${logo}`} alt={`Imagen de ${company}`} />
         </picture>
         <div>
-            <p className='jobsCard__company'>{company}</p>
+            <div className='jobsCard__status'>
+                <p className='jobsCard__company'>{company}</p>
+                {newJob ? (
+                    <p className='jobsCard__pill'>New!</p>
+                ): null}
+                {featured ? (
+                    <p className='jobsCard__pill jobsCard__pill--dark'>Featured</p>
+                ): null}
+            </div>
             <h3 className='jobsCard__position'>{position}</h3>
             <ul className='jobsCard__list'>
                 <li>{postedAt}</li>
