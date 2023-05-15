@@ -9,7 +9,7 @@
   --LightGrayishCyan2 : hsl(180, 31%, 95%); /*(Filter Tablets)*/
   --DarkGrayishCyan: hsl(180, 8%, 52%);
   --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
-
+  --transition100ms : all 100ms ease-in;
   --fuentePrincipal: 'League Spartan', sans-serif;
 }
 

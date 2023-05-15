@@ -26,7 +26,7 @@ export default function JobsCard({job}) {
 
   return (
     <div className={`jobsCard ${active}`}>
-        <picture>
+        <picture className='jobsCard__picture'>
             <img src={`${logo}`} alt={`Imagen de ${company}`} />
         </picture>
         <div>

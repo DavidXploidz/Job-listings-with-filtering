@@ -1,7 +1,12 @@
 .header{
-    background-image: url("images/bg-header-desktop.svg");
+    background-image: url("images/bg-header-mobile.svg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 8rem;
     background-color: var(--DesaturatedDarkCyan);
+}
+@media (min-width: 768px){ 
+    .header{
+        background-image: url("images/bg-header-desktop.svg");
+    }
 }

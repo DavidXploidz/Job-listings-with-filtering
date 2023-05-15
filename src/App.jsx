@@ -1,3 +1,4 @@
+import Filter from "./components/Filter";
 import Header from "./components/Header"
 import JobsCard from "./components/JobsCard";
 import useJobs from "./hooks/useJobs"
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
       <Header />
+      <Filter />
       <main className="contenedor my-5">
         {jobs ? jobs.map(job => (
           <JobsCard key={job.id} job={job} />
