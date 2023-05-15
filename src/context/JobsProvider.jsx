@@ -6,15 +6,46 @@ const JobsProvider = ({children}) => {
 
     const [jobs, setJobs] = useState([]);
     const [jobsDefault, setJobsDefault] = useState([]);
-    const [copy, setCopy] = useState([]);
-    const [filters, setFilters] = useState({});
+    const [filters, setFilters] = useState({
+        frontend: false,
+        backend: false,
+        fullstack: false,
+        junior: false,
+        senior: false,
+        midweight: false
+    });
 
     useEffect(() => {
       consultarApi();
     },[]);
 
-    // console.log(copy);
+    useEffect(() => {
+        const filteredVacancies = jobsDefault.filter(vacancy => {
+          if (filters.frontend && vacancy.role !== 'Frontend') {
+            return false;
+          }
+          if (filters.backend && vacancy.role !== 'Backend') {
+            return false;
+          }
+          if (filters.fullstack && vacancy.role !== 'Fullstack') {
+            return false;
+          }
+          if (filters.junior && vacancy.level !== 'Junior') {
+            return false;
+          }
+          if (filters.senior && vacancy.level !== 'Senior') {
+            return false;
+          }
+          if (filters.midweight && vacancy.level !== 'Midweight') {
+            return false;
+          }
+          return true;
+        });
+        setJobs(filteredVacancies);
+    }, [filters, jobsDefault]);
     
+
+    //Consulta la data o api y establece los registros en un state de jobs y jobsDefault
     const consultarApi = async () => {
         const url = 'http://localhost:5173/data.json';
         const respuesta = await fetch(url);
@@ -23,31 +54,35 @@ const JobsProvider = ({children}) => {
         setJobsDefault(resultado);
     }
 
-    const handleClickRole = (role) => {
-        const filtrados = jobsDefault.filter(job => job.role === role);
-        setCopy([...copy, ...filtrados]);
-        setJobs([...copy, ...filtrados]);
-    }
+    //Actualiza el estado del componente cada vez que se produce un cambio en un elemento input
+    //manteniendo una lista de los elementos seleccionados y sus estados correspondientes.
+    const handleFilterChange = (e) => {
+        const { id, checked } = e.target;
+        setFilters({ ...filters, [id]: checked });
+    };
 
-    const handleClickLevel = (level) => {
-        const filtrados = jobsDefault.filter(job => job.level === level);
-        setCopy([...copy, ...filtrados]);
-        setJobs([...copy, ...filtrados]);
-    }
-
+    //Limpia o restablece los valores a un inicio
     const handleResetFilter = () => {
         setJobs(jobsDefault);
+        setFilters({
+            frontend: false,
+            backend: false,
+            fullstack: false,
+            junior: false,
+            senior: false,
+            midweight: false
+        })
     }
 
 
     return (
         <JobsContext.Provider
-                value={{
-                    jobs,
-                    handleClickRole,
-                    handleResetFilter,
-                    handleClickLevel,
-                }}
+            value={{
+                jobs,
+                handleResetFilter,
+                handleFilterChange,
+                filters
+            }}
         >{children}
         </JobsContext.Provider>
       )
