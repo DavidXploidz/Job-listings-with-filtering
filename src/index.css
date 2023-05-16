@@ -41,7 +41,7 @@ input, textarea, button, select{
 /* Utilidades */
 .contenedor{
   max-width: 120rem;
-  margin: 0 auto;
+  margin-inline: auto;
   width: 90%;
 }
 .my-5{

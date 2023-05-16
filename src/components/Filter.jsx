@@ -34,6 +34,8 @@ export default function Filter() {
                 <input type="checkbox" id="midweight" checked={filters.midweight} onChange={handleFilterChange} />
             </li>
         </ul>
+
+        <hr className='filter__hr' />
     
         <button className='filter__clear' onClick={() => {handleResetFilter()}}>Clear</button>
         
