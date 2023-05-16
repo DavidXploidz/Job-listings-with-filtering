@@ -47,7 +47,7 @@ const JobsProvider = ({children}) => {
 
     //Consulta la data o api y establece los registros en un state de jobs y jobsDefault
     const consultarApi = async () => {
-        const url = 'http://localhost:5173/data.json';
+        const url = 'https://my-json-server.typicode.com/DavidXploidz/Job-listings-with-filtering/data';
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
         setJobs(resultado);
