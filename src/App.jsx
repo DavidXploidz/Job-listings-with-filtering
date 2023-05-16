@@ -18,6 +18,10 @@ function App() {
           <h2>No jobs yet!</h2>
         )}
       </main>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">David Adame Soto</a>.
+      </div>
     </>
   )
 }

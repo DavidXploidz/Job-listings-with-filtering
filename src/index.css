@@ -4,7 +4,7 @@
   --DesaturatedDarkCyan: hsl(180, 29%, 50%);
 
   /* ### Neutral */
-  --White: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
   --LightGrayishCyan : hsl(180, 52%, 96%); /*(Background)*/
   --LightGrayishCyan2 : hsl(180, 31%, 95%); /*(Filter Tablets)*/
   --DarkGrayishCyan: hsl(180, 8%, 52%);
@@ -47,4 +47,8 @@ input, textarea, button, select{
 .my-5{
   margin-top: 5rem;
   margin-bottom: 5rem;
+}
+.attribution{
+  text-align: center;
+  margin-bottom: 1rem;
 }
